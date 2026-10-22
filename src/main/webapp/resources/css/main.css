@@ -1,0 +1,12 @@
+@charset "UTF-8";
+* { box-sizing: border-box; }
+body { margin: 0; font-family: sans-serif; }
+
+/* 왼쪽 목록 나머지 지도 */
+.container { display: flex; height: 100vh; }
+.sidebar   { width: 320px; padding: 16px; overflow-y: auto; border-right: 1px solid #ddd; }
+#map       { flex: 1; }   /* 남은 공간을 지도가 전부 차지 */
+
+.place-list { list-style: none; padding: 0; }
+.place-item { padding: 10px; border-bottom: 1px solid #eee; cursor: pointer; }
+.place-item:hover { background: #f3f3f3; }
