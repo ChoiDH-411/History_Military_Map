@@ -20,8 +20,11 @@
                     <li class="place-item"
                         data-lat="${place.latitude}"
                         data-lng="${place.longitude}"
-                        data-name="<c:out value='${place.name}' />">
-                        <c:out value="${place.name}" />
+                        data-name="<c:out value='${place.name}' />"
+                        data-url="${ctx}/place/detail?id=${place.placeId}">
+                        <a href="${ctx}/place/detail?id=${place.placeId}">
+                            <c:out value="${place.name}" />
+                        </a>
                         (${place.countryCode}, ${place.category})
                     </li>
                 </c:forEach>

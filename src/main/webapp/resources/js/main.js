@@ -13,9 +13,20 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const items = document.querySelectorAll(".place-item");
 
 items.forEach(item => {
-	const lat  = Number(item.getAttribute("data-lat"));   // data-lat 값 (숫자로)
-	const lng  = Number(item.getAttribute("data-lng"));   // data-lng 값 (숫자로)
-	const name = item.getAttribute("data-name");   // data-name 값
+	const lat  = Number(item.getAttribute("data-lat"));
+	const lng  = Number(item.getAttribute("data-lng"));
+	const name = item.getAttribute("data-name");
 	
-	L.marker([lat, lng]).addTo(map).bindPopup(name);
+	const url = item.dataset.url;
+
+    // 팝업 내용을 HTML 요소로 직접 만듦
+    const popup = document.createElement('div');
+    const title = document.createElement('strong');
+    title.textContent = name;
+    const link = document.createElement('a');
+    link.href = url;
+    link.textContent = '상세보기';
+    popup.append(title, document.createElement('br'), link);
+
+    L.marker([lat, lng]).addTo(map).bindPopup(popup);
 });

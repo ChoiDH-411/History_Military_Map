@@ -1,0 +1,22 @@
+@charset "UTF-8";
+* { box-sizing: border-box; }
+body { margin: 0; font-family: sans-serif; }
+
+.detail { max-width: 960px; margin: 0 auto; padding: 16px; }
+.back   { display: inline-block; margin-bottom: 16px; }
+
+/* 사진(왼쪽) + 정보(오른쪽), 화면이 좁으면 아래로 내려감 */
+.detail-top { display: flex; flex-wrap: wrap; gap: 24px; }
+.photo { flex: 1 1 360px; }
+.photo img { width: 100%; border-radius: 8px; }
+.no-photo {
+    height: 240px; border-radius: 8px; background: #eee; color: #888;
+    display: flex; align-items: center; justify-content: center;
+}
+.info { flex: 1 1 300px; }
+.meta { color: #666; }
+
+#detail-map { height: 220px; border-radius: 8px; }   /* 지도는 높이 필수 */
+
+/* DB 설명글의 줄바꿈을 화면에도 그대로 표시 */
+.description { margin-top: 24px; line-height: 1.7; white-space: pre-line; }

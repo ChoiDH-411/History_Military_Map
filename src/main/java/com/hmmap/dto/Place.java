@@ -8,6 +8,21 @@ public class Place {
 	private double longitude;
 	private String imageFile;
 	private String name;
+	private String address;
+	private String description;
+	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	public int getPlaceId() {
 		return placeId;
 	}
