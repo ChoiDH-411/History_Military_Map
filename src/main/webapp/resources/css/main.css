@@ -10,3 +10,16 @@ body { margin: 0; font-family: sans-serif; }
 .place-list { list-style: none; padding: 0; }
 .place-item { padding: 10px; border-bottom: 1px solid #eee; cursor: pointer; }
 .place-item:hover { background: #f3f3f3; }
+/* 필터에 안 맞는 항목 숨김 */
+.place-item.hidden { display: none; }
+/* 선택된 항목 강조 */
+.place-item.selected { background: #ffe9a8; }
+
+/* 필터 영역 */
+.filters { display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+.filters input, .filters select { padding: 8px; font-size: 14px; }
+
+.country-buttons { display: flex; gap: 4px; }
+.country-btn { flex: 1; padding: 6px; border: 1px solid #ccc; background: #fff; cursor: pointer; }
+.country-btn.active { background: #333; color: #fff; }   /* 선택된 버튼 */
+
