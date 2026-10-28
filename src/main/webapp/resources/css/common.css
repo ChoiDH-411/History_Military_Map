@@ -1,0 +1,14 @@
+@charset "UTF-8";
+* { box-sizing: border-box; }
+body {
+    margin: 0; font-family: sans-serif;
+    display: flex; flex-direction: column; min-height: 100vh;   /* 헤더 + 본문을 세로로 */
+}
+
+.site-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 16px; border-bottom: 1px solid #ddd; background: #fff;
+}
+.logo { font-weight: bold; color: #222; text-decoration: none; }
+.lang-switch a { color: #999; text-decoration: none; padding: 0 4px; }
+.lang-switch a.active { color: #222; font-weight: bold; }   /* 현재 언어 */

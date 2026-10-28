@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import com.hmmap.dao.PlaceDao;
 import com.hmmap.dto.Place;
+import com.hmmap.util.LangUtil;
 
 /**
  * Servlet implementation class PlaceDetailController
@@ -43,7 +44,7 @@ public class PlaceDetailController extends HttpServlet {
 		
 		// 2. Dao 장소 조회
 		PlaceDao placeDao = new PlaceDao();
-		Place place = placeDao.findById(placeId, "ko");
+		Place place = placeDao.findById(placeId, LangUtil.getLang(request));
 
 		// 3. 없는 번호이거나 숨김 장소 → 404
 		if (place == null) {

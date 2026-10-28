@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.hmmap.dao.PlaceDao;
 import com.hmmap.dto.Place;
+import com.hmmap.util.LangUtil;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,11 +30,11 @@ public class MainController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PlaceDao placeDao = new PlaceDao();
-		List<Place> places = placeDao.findAll("ko");   
-		
-		request.setAttribute("places", places);   
+		List<Place> places = placeDao.findAll(LangUtil.getLang(request));
+
+		request.setAttribute("places", places);
 		request.getRequestDispatcher("/WEB-INF/views/main.jsp").forward(request, response);
 	}
 

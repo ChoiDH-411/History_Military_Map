@@ -28,7 +28,7 @@ items.forEach(item => {
     title.textContent = name;
     const link = document.createElement('a');
     link.href = url;
-    link.textContent = '상세보기';
+    link.textContent = document.getElementById('map').dataset.detailLabel;
     popup.append(title, document.createElement('br'), link);
 
     const marker = L.marker([lat, lng]).addTo(map).bindPopup(popup);
@@ -89,7 +89,6 @@ document.querySelectorAll('.country-btn').forEach(btn => {
         map.setView([lat, lng], zoom);
 		
 		btn.classList.add('active');
-		item.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
         applyFilter();
     });
