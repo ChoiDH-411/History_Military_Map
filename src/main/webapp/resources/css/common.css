@@ -12,3 +12,14 @@ body {
 .logo { font-weight: bold; color: #222; text-decoration: none; }
 .lang-switch a { color: #999; text-decoration: none; padding: 0 4px; }
 .lang-switch a.active { color: #222; font-weight: bold; }   /* 현재 언어 */
+
+/* 폼 화면 (회원가입, 로그인 등) */
+.form-page { width: 100%; max-width: 420px; margin: 40px auto; padding: 0 16px; }
+.form { display: flex; flex-direction: column; gap: 16px; }
+.form label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.form label.inline { flex-direction: row; align-items: center; display: inline-flex; margin-right: 16px; }
+.form input[type=text], .form input[type=password] { padding: 10px; font-size: 15px; }
+.form small { color: #888; }
+.form fieldset { border: 1px solid #ddd; padding: 8px 12px; }
+.form button { padding: 12px; font-size: 16px; background: #333; color: #fff; border: 0; cursor: pointer; }
+.form-error { color: #c00; background: #fee; padding: 10px; }
