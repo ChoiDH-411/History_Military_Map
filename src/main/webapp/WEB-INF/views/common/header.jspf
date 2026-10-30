@@ -2,9 +2,28 @@
 <header class="site-header">
     <a href="${ctx}/" class="logo"><fmt:message key="site.title" /></a>
 
-    <nav class="lang-switch">
-        <a href="${ctx}/lang?code=ko" class="${lang == 'ko' ? 'active' : ''}">KO</a>
-        |
-        <a href="${ctx}/lang?code=ja" class="${lang == 'ja' ? 'active' : ''}">JA</a>
-    </nav>
+    <div class="header-right">
+        <nav class="lang-switch">
+            <a href="${ctx}/lang?code=ko" class="${lang == 'ko' ? 'active' : ''}">KO</a>
+            |
+            <a href="${ctx}/lang?code=ja" class="${lang == 'ja' ? 'active' : ''}">JA</a>
+        </nav>
+
+        <nav class="member-menu">
+            <c:choose>
+                <c:when test="${not empty sessionScope.loginMember}">
+                    <span>
+                        <fmt:message key="header.greeting">
+                            <fmt:param><c:out value="${sessionScope.loginMember.nickname}" /></fmt:param>
+                        </fmt:message>
+                    </span>
+                    <a href="${ctx}/member/logout"><fmt:message key="header.logout" /></a>
+                </c:when>
+                <c:otherwise>
+                    <a href="${ctx}/member/login"><fmt:message key="header.login" /></a>
+                    <a href="${ctx}/member/join"><fmt:message key="header.join" /></a>
+                </c:otherwise>
+            </c:choose>
+        </nav>
+    </div>
 </header>
